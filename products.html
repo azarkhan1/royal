@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فروشگاه آنلاین - مشاهده و جستجوی محصولات">
+    <title>فروشگاه آنلاین - محصولات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- نوار ناوبری -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛍️ فروشگاه آنلاین</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">خانه</a>
+                <a href="products.html" class="nav-link active">محصولات</a>
+                <a href="cart.html" class="nav-link">سبد خرید <span id="cart-count" class="cart-badge">0</span></a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- بخش جستجو و فیلتر -->
+    <section class="products-page">
+        <div class="container">
+            <div class="products-layout">
+                <!-- سایدبار فیلتر -->
+                <aside class="filters-sidebar">
+                    <h2>فیلتر محصولات</h2>
+                    
+                    <!-- جستجو -->
+                    <div class="filter-group">
+                        <label for="search-input">جستجو:</label>
+                        <input type="text" id="search-input" placeholder="نام محصول را وارد کنید...">
+                    </div>
+
+                    <!-- دسته‌بندی -->
+                    <div class="filter-group">
+                        <label>دسته‌بندی:</label>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span>همه</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="electronics">
+                                <span>الکترونیک</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="clothing">
+                                <span>پوشاک</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="books">
+                                <span>کتاب</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="home">
+                                <span>خانه و آشپزخانه</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- محدوده قیمت -->
+                    <div class="filter-group">
+                        <label>محدوده قیمت:</label>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="10000000" value="0" step="10000">
+                            <input type="range" id="price-max" min="0" max="10000000" value="10000000" step="10000">
+                            <div class="price-display">
+                                <span>از: <span id="price-min-value">0</span> تومان</span>
+                                <span>تا: <span id="price-max-value">10,000,000</span> تومان</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- مرتب‌سازی -->
+                    <div class="filter-group">
+                        <label for="sort-select">مرتب‌سازی:</label>
+                        <select id="sort-select">
+                            <option value="default">پیش‌فرض</option>
+                            <option value="price-asc">قیمت: کم به زیاد</option>
+                            <option value="price-desc">قیمت: زیاد به کم</option>
+                            <option value="popularity">محبوبیت</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-secondary" id="reset-filters">پاک کردن فیلترها</button>
+                </aside>
+
+                <!-- لیست محصولات -->
+                <main class="products-main">
+                    <div class="products-header">
+                        <h2>همه محصولات</h2>
+                        <p id="products-count">در حال بارگذاری...</p>
+                    </div>
+                    <div class="products-grid" id="products-grid">
+                        <!-- محصولات از طریق JavaScript بارگذاری می‌شوند -->
+                    </div>
+                    <div id="no-products" class="no-products" style="display: none;">
+                        <p>محصولی یافت نشد</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>درباره ما</h3>
+                    <p>فروشگاه آنلاین معتبر با سال‌ها تجربه در ارائه بهترین محصولات</p>
+                </div>
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <p>📧 ایمیل: info@shop.com</p>
+                    <p>📞 تلفن: 021-12345678</p>
+                </div>
+                <div class="footer-section">
+                    <h3>لینک‌های مفید</h3>
+                    <a href="products.html">محصولات</a>
+                    <a href="cart.html">سبد خرید</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ۱۴۰۳ تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

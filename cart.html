@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فروشگاه آنلاین - سبد خرید و تسویه حساب">
+    <title>فروشگاه آنلاین - سبد خرید</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- نوار ناوبری -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛍️ فروشگاه آنلاین</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">خانه</a>
+                <a href="products.html" class="nav-link">محصولات</a>
+                <a href="cart.html" class="nav-link active">سبد خرید <span id="cart-count" class="cart-badge">0</span></a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- محتوای سبد خرید -->
+    <section class="cart-page section">
+        <div class="container">
+            <h2 class="section-title">سبد خرید</h2>
+            
+            <div class="cart-layout">
+                <!-- لیست محصولات در سبد -->
+                <div class="cart-items" id="cart-items">
+                    <!-- محصولات از طریق JavaScript بارگذاری می‌شوند -->
+                </div>
+
+                <!-- خلاصه سفارش -->
+                <aside class="cart-summary">
+                    <h3>خلاصه سفارش</h3>
+                    <div class="summary-row">
+                        <span>جمع کل:</span>
+                        <span id="subtotal">۰ تومان</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>هزینه ارسال:</span>
+                        <span id="shipping">رایگان</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>مبلغ قابل پرداخت:</span>
+                        <span id="total">۰ تومان</span>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="checkout-btn">ادامه و تسویه حساب</button>
+                </aside>
+            </div>
+
+            <!-- پیام سبد خالی -->
+            <div id="empty-cart" class="empty-cart" style="display: none;">
+                <p>سبد خرید شما خالی است</p>
+                <a href="products.html" class="btn btn-primary">مشاهده محصولات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- فرم تسویه حساب (مخفی تا زمان کلیک روی دکمه) -->
+    <section class="checkout-section section" id="checkout-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">اطلاعات تحویل</h2>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="full-name">نام و نام خانوادگی *</label>
+                    <input type="text" id="full-name" name="fullName" required 
+                           placeholder="نام و نام خانوادگی خود را وارد کنید">
+                    <span class="error-message" id="full-name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">شماره تماس *</label>
+                    <input type="tel" id="phone" name="phone" required 
+                           placeholder="09123456789" pattern="[0-9]{11}">
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">آدرس تحویل *</label>
+                    <textarea id="address" name="address" rows="4" required 
+                              placeholder="آدرس کامل تحویل را وارد کنید"></textarea>
+                    <span class="error-message" id="address-error"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-checkout">بازگشت</button>
+                    <button type="submit" class="btn btn-primary">ثبت و ارسال سفارش</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>درباره ما</h3>
+                    <p>فروشگاه آنلاین معتبر با سال‌ها تجربه در ارائه بهترین محصولات</p>
+                </div>
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <p>📧 ایمیل: info@shop.com</p>
+                    <p>📞 تلفن: 021-12345678</p>
+                </div>
+                <div class="footer-section">
+                    <h3>لینک‌های مفید</h3>
+                    <a href="products.html">محصولات</a>
+                    <a href="cart.html">سبد خرید</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ۱۴۰۳ تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-website",
+  "version": "1.0.0",
+  "description": "فروشگاه آنلاین کامل با Node.js و MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "shop",
+    "persian",
+    "farsi",
+    "rtl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
+
