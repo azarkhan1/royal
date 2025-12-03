@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-accent-medium;
+  }
+  
+  body {
+    @apply bg-background-light text-text-dark;
+    font-size: 16px;
+    line-height: 1.6;
+    direction: rtl;
+  }
+  
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+  
+  html[dir="ltr"] {
+    direction: ltr;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-accent-medium p-6;
+  }
+  
+  .card-dark {
+    @apply bg-dark-card rounded-lg shadow-sm border border-dark-border p-6;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-green text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-green/90 transition-colors flex items-center justify-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-blue/90 transition-colors flex items-center justify-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-green text-primary-green px-6 py-3 rounded-lg font-medium hover:bg-primary-green/10 transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-accent-medium focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-danger {
+    @apply bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Dark mode */
+.dark body {
+  @apply bg-dark-bg text-dark-text;
+}
+
+.dark .card {
+  @apply card-dark;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Skeleton loading */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.dark .skeleton {
+  background: linear-gradient(to right, #374151 8%, #4B5563 18%, #374151 33%);
+  background-size: 1000px 100%;
+}
+
